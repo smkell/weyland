@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-require "weyland"
+require "weyland/runner"
+
+Weyland::Runner.new(ARGV.dup).execute!
