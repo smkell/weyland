@@ -1,0 +1,14 @@
+package "fileio", "0.0.1"
+
+directory "gen" 
+
+file "gen/gen_header.h" {
+	depends_on { ":gen" }
+	touch { "gen/gen_header.h" }
+}
+
+file "gen/always_gen_header.h" {
+	depends_on { ":gen" }
+	rm_rf { "gen/always_gen_header.h" }
+	touch { "gen/always_gen_header.h" }
+}
