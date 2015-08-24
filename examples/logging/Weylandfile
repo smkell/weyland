@@ -1,0 +1,21 @@
+package "logging-example", "0.0.1"
+
+target "echo" {
+	echo { "Hello, from Weyland!" }
+}
+
+target "debug" {
+	debug { "Hello, from debug log level!" }
+}
+
+target "info" {
+	info { "Hello, from info log level!" }
+}
+
+target "warn" {
+	warn { "Hello, from warn log level!" }
+}
+
+target "error" {
+	error { "Hello, from error log level!" }
+}
