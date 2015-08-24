@@ -1,0 +1,5 @@
+package "package_a", "0.0.1"
+
+target "build" {
+	info { "Building package_a" }
+}
