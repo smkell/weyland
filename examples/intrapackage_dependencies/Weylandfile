@@ -1,0 +1,10 @@
+package "intrapackage_dependencies", "0.0.1"
+
+target "a" {
+	info { "Building target 'a'" }
+}
+
+target "b" {
+	depends_on ":a" 
+	info { "Building target 'b'" }
+}
