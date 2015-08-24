@@ -1,0 +1,8 @@
+package "package_b", "0.0.1" do |pkg|
+	pkg.depends_on "package_a", "~> 0.0.1"
+
+	pkg.target "build" do |t|
+		t.depends_on "package_a:build"
+		t.info { |t| "Building package_b" }
+	end
+end

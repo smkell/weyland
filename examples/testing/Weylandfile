@@ -1,0 +1,16 @@
+package "testing", "0.0.1" do |pkg|
+	pkg.file "genfile" do |f|
+		f.touch "genfile" 
+	end
+
+	pkg.target "genfile_test" do |t|
+		t.test_for ":genfile"
+
+		t.block do |b|
+			unless File.exist?("genfile")
+				b.error { "Expected the file 'genfile' to exist but did not." }
+				b.fail 
+			end
+		end
+	end
+end

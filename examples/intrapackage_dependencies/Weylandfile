@@ -1,0 +1,11 @@
+package "intrapackage_dependencies", "0.0.1" do |pkg|
+	pkg.target "a" do |t|
+		t.info { |t| "Building target 'a'" }
+	end
+
+	pkg.target "b" do |t|
+		t.depends_on ":a"
+
+		t.info { |t| "Building target 'b'" }
+	end
+end

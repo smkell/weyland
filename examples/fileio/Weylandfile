@@ -1,0 +1,14 @@
+package "fileio", "0.0.1" do |pkg|
+	pkg.directory "gen"
+
+	pkg.file "gen/gen_header.h" do |f|
+		f.depends_on ":gen"
+		f.touch "gen/gen_header.h"
+	end
+
+	pkg.file "gen/always_gen_header.h" do |f|
+		f.depends_on ":gen"
+		f.rm_rf "gen/always_gen_header.h"
+		f.touch "gen/always_gen_header.h"
+	end
+end
