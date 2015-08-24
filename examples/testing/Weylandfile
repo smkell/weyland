@@ -1,0 +1,13 @@
+package "testing", "0.0.1"
+
+file "genfile" {
+	touch { "genfile" }
+}
+
+target "genfile_test" {
+	test_for ":genfile"
+	if !file_exist("genfile") {
+		error { "Expected file 'genfile' to exist but did not." }
+		fail
+	}
+}
