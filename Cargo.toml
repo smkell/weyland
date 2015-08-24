@@ -1,0 +1,4 @@
+[package]
+name = "weyland"
+version = "0.1.0"
+authors = ["Kell, Sean <skell@ea.com>"]
