@@ -1,0 +1,5 @@
+package "simple_c", "0.0.1" do |pkg|
+	pkg.c_program "simple" do |t|
+		t.sources = ["src/**/*.c"]
+	end
+end

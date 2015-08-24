@@ -1,5 +1,5 @@
-package "package_a", "0.0.1"
-
-target "build" {
-	info { "Building package_a" }
-}
+package "package_a", "0.0.1" do |pkg|
+	pkg.target "build" do |t|
+		t.info { |t| "Building package_a" }
+	end
+end

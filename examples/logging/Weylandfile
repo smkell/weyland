@@ -1,21 +1,21 @@
-package "logging-example", "0.0.1"
+package "logging-example", "0.0.1" do |pkg|
+	pkg.target "echo" do |t|
+		t.echo { "Hello, from Weyland!" }
+	end
 
-target "echo" {
-	echo { "Hello, from Weyland!" }
-}
+	pkg.target "debug" do |t|
+		t.debug { "Hello from debug log level!" }
+	end
 
-target "debug" {
-	debug { "Hello, from debug log level!" }
-}
+	pkg.target "info" do |t|
+		t.info { "Hello from info log level!" }
+	end
 
-target "info" {
-	info { "Hello, from info log level!" }
-}
+	pkg.target "warn" do |t|
+		t.warn { "Hello from warn log level!" }
+	end
 
-target "warn" {
-	warn { "Hello, from warn log level!" }
-}
-
-target "error" {
-	error { "Hello, from error log level!" }
-}
+	pkg.target "error" do |t|
+		t.error { "Hello from error log level!" }
+	end
+end

@@ -1,0 +1,14 @@
+package "adder", "0.0.1" do |pkg|
+
+	pkg.c_library "adder" do |lib|
+		lib.include_dirs = ["include"]
+		lib.sources = ["src/lib/adder/**/*.c"]
+	end
+
+	pkg.c_program "adderprog" do |prog|
+		prog.depends_on ":adder"
+		prog.output_file_name = "adder"
+
+		prog.sources = ["src/bin/adder/**/*.c"]
+	end
+end
